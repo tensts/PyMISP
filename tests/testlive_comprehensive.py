@@ -188,6 +188,7 @@ class TestComprehensive(unittest.TestCase):
             attributes = self.admin_misp_connector.search(controller='attributes',
                                                           timestamp=first.timestamp.timestamp(),
                                                           type_attribute=attributes_types_search)
+            print(attributes)
             self.assertEqual(len(attributes), 3)
             for a in attributes:
                 self.assertIn(a.event_id, [second.id, third.id])
